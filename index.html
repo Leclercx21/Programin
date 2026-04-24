@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS | Agencia Digital de Alto Rendimiento</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">NEXUS<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#services">Servicios</a></li>
+                <li><a href="#showreel">Showreel</a></li>
+                <li><a href="#about">Nosotros</a></li>
+                <li><a href="#contact" class="btn-primary">Contacto</a></li>
+            </ul>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-content hidden">
+            <h1>Elevamos tu <span>Visión Digital</span> al Siguiente Nivel</h1>
+            <p>Diseño de vanguardia, tecnología extrema y estrategias comerciales que posicionan tu marca en la cima de la industria moderna.</p>
+            <div class="hero-buttons">
+                <a href="#services" class="btn-primary">Explorar Servicios</a>
+                <a href="#showreel" class="btn-secondary"><i class="fas fa-play"></i> Ver Showreel</a>
+            </div>
+        </div>
+        <div class="hero-background"></div>
+    </header>
+
+    <section id="services" class="section">
+        <div class="container">
+            <div class="section-title hidden">
+                <h2>Nuestras Soluciones</h2>
+                <p>Ecosistemas digitales diseñados para la excelencia y el rendimiento.</p>
+            </div>
+            
+            <div class="grid services-grid">
+                <div class="card hidden">
+                    <div class="icon"><i class="fas fa-code"></i></div>
+                    <h3>Desarrollo Web Extremo</h3>
+                    <p>Arquitecturas robustas, ultrarrápidas y escalables utilizando las tecnologías más avanzadas del 2026.</p>
+                </div>
+                <div class="card hidden">
+                    <div class="icon"><i class="fas fa-paint-brush"></i></div>
+                    <h3>Diseño UI/UX</h3>
+                    <p>Interfaces sofisticadas y oscuras que atrapan al usuario desde el primer milisegundo.</p>
+                </div>
+                <div class="card hidden">
+                    <div class="icon"><i class="fas fa-rocket"></i></div>
+                    <h3>Estrategia Comercial</h3>
+                    <p>Modelos de negocio digitales enfocados en la conversión masiva y la retención de clientes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="showreel" class="section bg-darker">
+        <div class="container">
+            <div class="section-title hidden">
+                <h2>Impacto Audiovisual</h2>
+                <p>Nuestra calidad habla por sí misma. Descubre de lo que somos capaces.</p>
+            </div>
+            
+            <div class="video-grid">
+                <div class="video-wrapper hidden">
+                    <iframe src="https://www.youtube.com/embed/Z9RcR1UAm5g?autoplay=0&controls=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-wrapper hidden" style="transition-delay: 0.2s;">
+                    <iframe src="https://www.youtube.com/embed/UkoqIlppfhc?autoplay=0&controls=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container layout-split">
+            <div class="text-content hidden">
+                <h2>Diseñados para <br>la <span>Excelencia</span></h2>
+                <p>En NEXUS no solo escribimos código; esculpimos experiencias. Nuestro equipo de élite está compuesto por arquitectos digitales obsesionados con los detalles, el rendimiento y la estética profesional en tonos oscuros.</p>
+                
+                <div class="stats">
+                    <div class="stat">
+                        <h4>99.9%</h4>
+                        <p>Uptime garantizado</p>
+                    </div>
+                    <div class="stat">
+                        <h4>+150</h4>
+                        <p>Proyectos élite</p>
+                    </div>
+                </div>
+            </div>
+            <div class="image-content hidden">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tecnología Avanzada">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section bg-darker">
+        <div class="container">
+            <div class="section-title hidden">
+                <h2>Inicia tu Transformación</h2>
+                <p>Estás a un paso de redefinir tu presencia digital.</p>
+            </div>
+            
+            <div class="contact-form-container hidden">
+                <form id="contactForm" class="contact-form">
+                    <div class="input-group">
+                        <input type="text" id="name" required placeholder=" ">
+                        <label for="name">Nombre Completo</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="email" required placeholder=" ">
+                        <label for="email">Correo Electrónico</label>
+                    </div>
+                    <div class="input-group">
+                        <textarea id="message" rows="4" required placeholder=" "></textarea>
+                        <label for="message">Cuéntanos sobre tu proyecto</label>
+                    </div>
+                    <button type="submit" class="btn-primary w-100">Enviar Solicitud <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>NEXUS<span>.</span></h3>
+                <p>El futuro del desarrollo web comercial.</p>
+            </div>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 NEXUS Digital. Todos los derechos reservados.</p>
+            <span id="secret-trigger" style="width: 10px; height: 10px; display: inline-block; cursor: crosshair;"></span>
+        </div>
+    </footer>
+
+
+    <div id="easter-egg-modal">
+        <div class="glitch-container">
+            <h2 class="glitch" data-text="ACCESO CONCEDIDO">ACCESO CONCEDIDO</h2>
+            <p>Bienvenido a la red central, usuario curioso. Has activado el Protocolo Nexus.</p>
+            <p></p>
+            <button id="close-egg" class="btn-primary">Cerrar Terminal</button>
+        </div>
+    </div>
+
+    
+
+    <script src="script.js"></script>
+    <script>
+</html>
