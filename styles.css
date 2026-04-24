@@ -9,7 +9,8 @@
     --accent: #00f0ff;
     --accent-glow: rgba(0, 240, 255, 0.4);
     
-    --font-heading: 'Space Grotesk', sans-serif;
+    /* Tipografía Actualizada a Montserrat */
+    --font-heading: 'Montserrat', sans-serif;
     --font-body: 'Inter', sans-serif;
     
     --transition-fast: 0.3s ease;
@@ -21,6 +22,11 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+}
+
+/* Ocultar cursor nativo */
+body, a, button, input, textarea {
+    cursor: none !important;
 }
 
 body {
@@ -45,11 +51,39 @@ a {
     color: inherit;
 }
 
+/* --- CURSOR PERSONALIZADO --- */
+#custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 25px;
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+    transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+    mix-blend-mode: difference;
+}
+
+#custom-cursor.expand {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(0, 240, 255, 0.2);
+    border-color: transparent;
+    backdrop-filter: blur(2px);
+}
+
 /* --- UTILIDADES --- */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
+}
+
+.text-center {
+    text-align: center;
 }
 
 .section {
@@ -74,7 +108,6 @@ a {
     letter-spacing: 1px;
     border-radius: 4px;
     transition: var(--transition-fast);
-    cursor: pointer;
     border: none;
 }
 
@@ -131,7 +164,7 @@ nav.scrolled {
 .logo {
     font-family: var(--font-heading);
     font-size: 1.8rem;
-    font-weight: 700;
+    font-weight: 900;
     letter-spacing: 2px;
 }
 
@@ -157,7 +190,6 @@ nav.scrolled {
 .menu-toggle {
     display: none;
     font-size: 1.5rem;
-    cursor: pointer;
 }
 
 /* --- HERO SECTION --- */
@@ -278,6 +310,149 @@ nav.scrolled {
     color: var(--text-muted);
 }
 
+/* --- TERMINAL WINDOW (CÓDIGO) --- */
+.terminal-window {
+    background: #0d0d11;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+}
+
+.terminal-header {
+    background: #1a1a24;
+    padding: 0.8rem 1rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 6px;
+    margin-right: 15px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+.dot.red { background: #ff5f56; }
+.dot.yellow { background: #ffbd2e; }
+.dot.green { background: #27c93f; }
+
+.terminal-title {
+    color: var(--text-muted);
+    font-family: monospace;
+    font-size: 0.9rem;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.terminal-body {
+    padding: 1.5rem;
+    overflow-x: auto;
+}
+
+.terminal-body pre {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.terminal-body .comment { color: #6b7280; }
+.terminal-body .tag { color: #f87171; }
+.terminal-body .attr { color: #34d399; }
+.terminal-body .string { color: #fbbf24; }
+.terminal-body .selector { color: #60a5fa; }
+.terminal-body .property { color: #a78bfa; }
+.terminal-body .number { color: #f472b6; }
+
+/* --- TIC-TAC-TOE GAME --- */
+.game-container {
+    max-width: 400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+.game-status {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-main);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.tic-tac-toe-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    background: var(--border-color);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.cell {
+    aspect-ratio: 1;
+    background: var(--bg-main);
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.5rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    transition: var(--transition-fast);
+}
+
+.cell:hover:not(.occupied) {
+    background: #151520;
+    box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+.cell.x-mark {
+    color: #ff3b3b;
+    text-shadow: 0 0 15px rgba(255, 59, 59, 0.6);
+}
+
+.cell.o-mark {
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+/* Confeti Container */
+#confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 20px;
+    background-color: var(--accent);
+    top: -20px;
+    opacity: 0;
+}
+
+@keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
 /* --- SHOWREEL (VIDEOS) --- */
 .video-grid {
     display: grid;
@@ -309,7 +484,7 @@ nav.scrolled {
     height: 100%;
 }
 
-/* --- ABOUT --- */
+/* --- ABOUT & SPLIT LAYOUTS --- */
 .layout-split {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -391,7 +566,6 @@ nav.scrolled {
     pointer-events: none;
 }
 
-/* Animación del Label al enfocar o escribir */
 .input-group input:focus,
 .input-group textarea:focus,
 .input-group input:not(:placeholder-shown),
@@ -417,6 +591,7 @@ footer {
     background: #000;
     padding: 4rem 2rem 2rem;
     border-top: 1px solid var(--border-color);
+    position: relative;
 }
 
 .footer-container {
@@ -448,6 +623,56 @@ footer {
     font-size: 0.9rem;
 }
 
+/* --- KUROMI EASTER EGG --- */
+.kuromi-easter-egg {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    opacity: 0.05;
+    transition: all 0.5s ease;
+    z-index: 100;
+}
+
+.kuromi-easter-egg svg {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.kuromi-tooltip {
+    position: absolute;
+    bottom: 50px;
+    right: 0;
+    background: #30005a;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-family: var(--font-heading);
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.kuromi-easter-egg:hover {
+    opacity: 1;
+    color: #4a0082; /* Morado oscuro */
+}
+
+.kuromi-easter-egg:hover svg {
+    transform: rotate(360deg) scale(1.2);
+}
+
+.kuromi-easter-egg:hover .kuromi-tooltip {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* --- ANIMACIONES SCROLL (Observer) --- */
 .hidden {
     opacity: 0;
@@ -460,7 +685,7 @@ footer {
     transform: translateY(0);
 }
 
-/* --- EASTER EGG STYLES --- */
+/* --- EASTER EGG STYLES (Matrix) --- */
 #easter-egg-modal {
     position: fixed;
     top: 0;
