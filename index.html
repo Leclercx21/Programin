@@ -7,13 +7,14 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Montserrat:wght@400;700;900&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <div id="custom-cursor"></div>
 
     <nav id="navbar">
         <div class="nav-container">
@@ -23,6 +24,8 @@
                 <li><a href="#services">Servicios</a></li>
                 <li><a href="#showreel">Showreel</a></li>
                 <li><a href="#about">Nosotros</a></li>
+                <li><a href="#process">Método</a></li>
+                <li><a href="#game">Desafío</a></li>
                 <li><a href="#contact" class="btn-primary">Contacto</a></li>
             </ul>
             <div class="menu-toggle"><i class="fas fa-bars"></i></div>
@@ -109,6 +112,71 @@
         </div>
     </section>
 
+    <section id="process" class="section bg-darker">
+        <div class="container layout-split">
+            <div class="text-content hidden">
+                <h2>Nuestra <span>Ingeniería</span></h2>
+                <p>Transparencia absoluta. No usamos plantillas genéricas; forjamos cada línea de código desde cero garantizando un rendimiento extremo, semántica impecable y escalabilidad.</p>
+                <p>Conoce la anatomía de un sistema NEXUS.</p>
+            </div>
+            <div class="code-content hidden">
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <div class="terminal-title">nexus_core.html</div>
+                    </div>
+                    <div class="terminal-body">
+<pre><code><span class="comment">&lt;!-- Arquitectura Semántica NEXUS --&gt;</span>
+<span class="tag">&lt;section</span> <span class="attr">class</span>=<span class="string">"nexus-performance"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"glitch-wrapper"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;h1</span> <span class="attr">data-text</span>=<span class="string">"Innovación"</span><span class="tag">&gt;</span>
+            Innovación Pura
+        <span class="tag">&lt;/h1&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;style&gt;</span>
+        <span class="selector">.nexus-performance</span> {
+            <span class="property">display</span>: grid;
+            <span class="property">backdrop-filter</span>: blur(<span class="number">10px</span>);
+            <span class="property">animation</span>: pulse <span class="number">2s</span> infinite;
+        }
+    <span class="tag">&lt;/style&gt;</span>
+<span class="tag">&lt;/section&gt;</span></code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="game" class="section">
+        <div class="container text-center">
+            <div class="section-title hidden">
+                <h2>Enfréntate a la <span>Máquina</span></h2>
+                <p>Prueba tu lógica. Juega contra nuestra IA entrenada con el algoritmo Minimax.</p>
+            </div>
+            
+            <div class="game-container hidden">
+                <div id="game-status" class="game-status">Tu turno (X)</div>
+                <div class="tic-tac-toe-board" id="board">
+                    <div class="cell" data-index="0"></div>
+                    <div class="cell" data-index="1"></div>
+                    <div class="cell" data-index="2"></div>
+                    <div class="cell" data-index="3"></div>
+                    <div class="cell" data-index="4"></div>
+                    <div class="cell" data-index="5"></div>
+                    <div class="cell" data-index="6"></div>
+                    <div class="cell" data-index="7"></div>
+                    <div class="cell" data-index="8"></div>
+                </div>
+                <button id="reset-game" class="btn-primary w-100" style="max-width: 300px; margin-top: 2rem;">Reiniciar Protocolo</button>
+            </div>
+            <div id="confetti-container"></div>
+        </div>
+    </section>
+
     <section id="contact" class="section bg-darker">
         <div class="container">
             <div class="section-title hidden">
@@ -150,22 +218,42 @@
         </div>
         <div class="footer-bottom">
             <p>&copy; 2026 NEXUS Digital. Todos los derechos reservados.</p>
-            <span id="secret-trigger" style="width: 10px; height: 10px; display: inline-block; cursor: crosshair;"></span>
+            <span id="secret-trigger" style="width: 10px; height: 10px; display: inline-block;"></span>
+        </div>
+        
+        <div class="kuromi-easter-egg">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 85 C 20 85, 15 65, 10 40 L 35 35 C 40 40, 60 40, 65 35 L 90 40 C 85 65, 80 85, 50 85 Z" fill="currentColor"/>
+                <path d="M10 40 C 15 20, 25 10, 30 15 C 32 25, 35 35, 35 35" stroke="currentColor" stroke-width="5" fill="none"/>
+                <path d="M90 40 C 85 20, 75 10, 70 15 C 68 25, 65 35, 65 35" stroke="currentColor" stroke-width="5" fill="none"/>
+                <circle cx="10" cy="40" r="6" fill="currentColor"/>
+                <circle cx="90" cy="40" r="6" fill="currentColor"/>
+            </svg>
+            <div class="kuromi-tooltip">¡Me encontraste!</div>
         </div>
     </footer>
 
-
     <div id="easter-egg-modal">
         <div class="glitch-container">
-            <h2 class="glitch" data-text="ACCESO CONCEDIDO">ACCESO CONCEDIDO</h2>
-            <p>Bienvenido a la red central, usuario curioso. Has activado el Protocolo Nexus.</p>
-            <p></p>
-            <button id="close-egg" class="btn-primary">Cerrar Terminal</button>
+            <h2 class="glitch" data-text="MODO NEXUS ACTIVADO">MODO NEXUS ACTIVADO</h2>
+            
+            <p>Detectando telemetría de alto rendimiento...</p>
+            <p>Has desbloqueado el protocolo 'Stuttgart'.</p>
+            
+            <p style="margin: 1.5rem 0; font-size: 1.1rem; font-style: italic; color: #e5e7eb;">
+                "No encontraba el coche de mis sueños, así que lo construí yo mismo."<br>
+                <strong style="font-style: normal; font-size: 0.85em; color: var(--accent); letter-spacing: 1px;">— FERDINAND PORSCHE</strong>
+            </p>
+            
+            <p>Aplicamos esa misma ingeniería a tu ecosistema digital. No usamos plantillas; construimos a medida.</p>
+            <br>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Código de acceso validado.</p>
+            <p style="color: var(--accent); font-family: monospace; letter-spacing: 2px; margin: 1rem 0;">[ SISTEMA NOMINAL ]</p>
+            
+            <button id="close-egg" class="btn-primary" style="margin-top: 1rem;">Cerrar Terminal</button>
         </div>
     </div>
 
-    
-
     <script src="script.js"></script>
-    <script>
+</body>
 </html>
